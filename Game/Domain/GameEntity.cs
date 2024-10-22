@@ -69,6 +69,7 @@ namespace Game.Domain
         {
             if (Status != GameStatus.Playing)
                 throw new InvalidOperationException(Status.ToString());
+            
             foreach (var player in Players.Where(p => p.UserId == userId))
             {
                 if (player.Decision.HasValue)
