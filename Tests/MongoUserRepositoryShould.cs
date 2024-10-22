@@ -64,7 +64,8 @@ namespace Tests
             user.CurrentGameId = gameId;
             repo.Update(user);
             var retrieved = repo.FindById(user.Id);
-            Assert.NotNull(retrieved);
+            //Assert.NotNull(retrieved, null);
+            Assert.That(retrieved != null);
             retrieved.CurrentGameId.Should().Be(gameId);
         }
 
